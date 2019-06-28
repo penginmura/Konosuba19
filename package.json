@@ -8,7 +8,7 @@
     "firebase-tools": "^7.0.2"
   },
   "scripts": {
-    "local": "http-server"
+    "local": "cd web; http-server"
   },
   "author": "",
   "license": "ISC"
