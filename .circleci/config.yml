@@ -1,0 +1,46 @@
+version: 2
+jobs:
+  #
+  # Production環境へのデプロイ
+  #
+  production:
+    docker:
+      - image: circleci/node:10.7
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          command: npm i
+      - run:
+          name: Deploy to Firebase Hosting (Staging)
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project iosdc-cfps19-staging # TODO: デプロイして良くなったら治す
+
+  #
+  # Staging環境へのデプロイ
+  #
+  staging:
+    docker:
+      - image: circleci/node:10.7
+    steps:
+      - checkout
+      - run:
+          name: npm install
+          command: npm i
+      - run:
+          name: Deploy to Firebase Hosting (Staging)
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project iosdc-cfps19-staging
+
+workflows:
+  version: 2
+  production:
+    jobs:
+      - production:
+          filters:
+            branches:
+              only: master
+  staging:
+    jobs:
+      - staging:
+          filters:
+            branches:
+              only: develop
