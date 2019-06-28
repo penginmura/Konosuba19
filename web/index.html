@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iOSDC 2019 のプロポーザル（CfP）の一覧の閲覧・検索ができるサービスです。" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>この素晴らしいCfPに祝福を！2 - iOSDC 2019 応援サイト / プロポーザル（CfP）一覧の閲覧・検索</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <style type="text/css">
+    body {
+        font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", "YuGothic", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    }
+    .section {
+        padding: 1.0rem 1.5rem;
+    }
+    span.tag.cfp_adopted {
+        color: #ffffff;
+        background-color: #ff0000;
+    }
+    .title {
+        color: #fff !important;
+    }
+    .hero {
+        background-image: linear-gradient(141deg,#ea5a35 0,#ea5a35 71%,#ea5a35 100%) !important;
+        display: block !important;
+    }
+    .darkmode--activated .hero {
+        background-image: linear-gradient(141deg,#385eaa 0,#385eaa 71%,#385eaa 100%) !important;
+        display: block !important;
+    }
+    .hero .subtitle {
+        color: #fff !important;
+    }
+    .footer {
+        background-color: #ea5a35 !important;
+        color: #fff !important;
+        display: block !important;
+    }
+    .darkmode--activated .footer {
+        background-color: #385eaa !important;
+        color: #fff !important;
+        display: block !important;
+    }
+    .footer a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .search-count {
+        padding-left: 24px;
+    }
+    .is-selected {
+        background-color: #ea5a35 !important;
+    }
+    .darkmode--activated .is-selected {
+        background-color: #385eaa !important;
+    }
+    .darkmode--activated p {
+        color: #fff;
+    }
+    .darkmode--activated .card {
+        background-color: #000;
+        box-shadow: 0 2px 3px rgba(255, 255, 255, .2), 0 0 0 1px rgba(255,255,255,.2);
+    }
+    .darkmode--activated .button {
+        color: #fff;
+        background-color: #000;
+        border-color: #4a4a4a;
+    }
+    .darkmode--activated .button.is-selected  {
+        border-color: #4a4a4a;
+    }
+    .darkmode--activated .control .input {
+        color: #fff;
+        background-color: #000;
+        border-color: #4a4a4a;
+    }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122724032-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122724032-2');
+    </script>
+</head>
+<body>
+    <section class="hero is-small is-light is-bold darkmode-ignore">
+        <div class="hero-head">
+            <!-- 今年のバナーが用意されたらそれを配置してコメントを外す -->
+            <!-- <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="https://iosdc.jp/2019/" target="_blank">
+                            <img src="/assets/iOSDC_3.png">
+                        </a>
+                    </div>
+                </div>
+            </nav> -->
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    この素晴らしいCfPに祝福を！2
+                </h1>
+                <h2 class="subtitle">
+                    iOSDC 2019 応援サイト / ペンギン村 Tech presents.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="columns">
+            <!-- 左カラム -->
+            <div class="column is-3">
+                <div class="section">
+                    <!-- メニュー -->
+                    <aside class="menu" id="menu">
+                        <p class="menu-label">
+                        Official
+                        </p>
+                        <ul class="menu-list">
+                            <li><a href="https://iosdc.jp/2019/" target="_blank">iOSDC Japan 2019</a></li>
+                        </ul>
+                        <!-- 今年の関連イベントが発表されたらコメントを外す -->
+                        <!-- <p class="menu-label">
+                            Informal
+                        </p>
+                        <ul class="menu-list">
+                            <li>
+                                <span><a href="https://ore-con.firebaseapp.com/" target="_blank">俺コン 2019 Summer</a></span>
+                                <ul>
+                                    <li><a href="https://orecon.connpass.com/event/94858/" target="_blank">Day. 1</a></li>
+                                    <li><a href="https://orecon.connpass.com/event/94867/" target="_blank">Day. 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="menu-list">
+                            <li>
+                                <span>iOSDC 2019 Reject Conference</span>
+                                <ul>
+                                    <li><a href="https://iosdc-reject-conference.connpass.com/event/93314/" target="_blank">days1</a></li>
+                                    <li><a href="https://iosdc-reject-conference.connpass.com/event/93315/" target="_blank">days2</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                        <p class="menu-label">
+                            Developer
+                        </p>
+                        <ul class="menu-list">
+                            <li><a href="http://blog.penginmura.tech/" target="_blank">ペンギン村 Tech Blog</a></li>
+                        </ul>
+                        <p class="menu-label">
+                            Mode
+                        </p>
+                        <ul class="menu-list">
+                            <li>
+                                <a v-on:click="toggleDark(this)">
+                                    {{ isDark ? 'ライトモード' : 'ダークモード' }}
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+                <!-- はてぶ -->
+                <div class="section">
+                    <a href="https://b.hatena.ne.jp/entry/s/iosdc19-cfps.penginmura.tech/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加">
+                        <img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+                    </a>
+                    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async">
+                    </script>
+                </div>
+            </div>
+            <!-- コンテンツ -->
+            <div class="column is-9">
+                <!-- フィルタリング -->
+                <div class="section is-small">
+                    <div id="searchCondition" class="field is-grouped is-grouped-multiline">
+                        <!-- 採択や関連イベントが追加されたらコメントを外す-->
+                        <!-- 採択 -->
+                        <!-- <div class="control buttons has-addons">
+                            <span
+                                v-on:click="eventType=undefined; isAdopt=true; isNotAdopt=true; filter(this)"
+                                v-bind:class="{ 'is-selected is-link': !eventType && isAdopt && isNotAdopt }" class="button">
+                                すべて
+                            </span>
+                            <span
+                                v-on:click="eventType=undefined; isAdopt=true; isNotAdopt=false; filter(this)"
+                                v-bind:class="{ 'is-selected is-danger': !eventType && isAdopt && !isNotAdopt }" class="button">
+                                採択
+                            </span>
+                            <span
+                                v-on:click="eventType=undefined; isAdopt=false; isNotAdopt=true; filter(this)"
+                                v-bind:class="{ 'is-selected is-info': !eventType && !isAdopt && isNotAdopt }" class="button">
+                                非採択
+                            </span>
+                        </div> -->
+                        <!-- 関連イベント -->
+                        <!-- <div class="control buttons has-addons">
+                            <span
+                                v-on:click="eventType='orecon'; filter(this)"
+                                v-bind:class="{ 'is-selected is-warning': eventType === 'orecon' }" class="button">
+                                俺コン
+                            </span>
+                            <span
+                                v-on:click="eventType='rejectcon'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': eventType === 'rejectcon' }" class="button">
+                                Reject Conf
+                            </span>
+                        </div> -->
+                        <!-- キーワード検索 -->
+                        <div class="control field is-horizontal">
+                            <p class="control has-icons-left">
+                                <input v-model="searchWord" class="input" type="text" placeholder="検索ワード">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <!-- トークタイプ検索 -->
+                        <div class="control buttons has-addons">
+                            <span
+                                v-on:click="talkType=''; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === '' }" class="button">
+                                すべて
+                            </span>
+                            <span
+                                v-on:click="talkType='LT'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === 'LT' }" class="button">
+                                LT
+                            </span>
+                            <span
+                                v-on:click="talkType='LT_R'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === 'LT_R' }" class="button">
+                                ルーキーズ
+                            </span>
+                            <span
+                                v-on:click="talkType='15m'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === '15m' }" class="button">
+                                30分
+                            </span>
+                            <span
+                                v-on:click="talkType='30m'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === '30m' }" class="button">
+                                60分
+                            </span>
+                            <span
+                                v-on:click="talkType='iOS'; filter(this)"
+                                v-bind:class="{ 'is-selected is-primary': talkType === 'iOS' }" class="button">
+                                パッション
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- プロポーザル一覧 -->
+                <div id="proposals">
+                    <!-- 一覧 -->
+                    <template v-if="proposals">
+                        <span class="search-count">検索結果: {{ proposals.length }}件</span>
+                        <div v-for="proposal in proposals">
+                            <section class="section is-small">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <figure class="image is-48x48">
+                                                    <img :src="proposal.icon_url" alt="">
+                                                </figure>
+                                            </div>
+                                            <div class="media-content">
+                                                <p class="title is-5">
+                                                    <span v-show="proposal.is_adopted" class="tag cfp_adopted">採択</span>
+                                                    <span v-show="proposal.is_adopted_orecon" class="tag is-warning">俺コン</span>
+                                                    <span v-show="proposal.is_adopted_rejectcon" class="tag is-primary">Reject Conf</span>
+                                                    <a :href="proposal.detail_url" target="_blank">{{ proposal.title }}</a>&nbsp;
+                                                </p>
+                                                <p class="subtitle is-6">{{ proposal.user }} / <a :href="'https://twitter.com/' +  proposal.twitter_id" target="_blank">@{{ proposal.twitter_id }}</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p v-html="proposal.description.replace(/\r\n/g,'<br/>')"></p>
+                                        </div>
+                                        <span
+                                            class="tag"
+                                            v-bind:class="[isDark ? 'is-dark' : 'is-light', 'is-light']">
+                                            <a v-if="proposal.video_url"
+                                                class="button is-small is-link is-outlined"
+                                                :href="proposal.video_url"
+                                                target="_blank">
+                                                <span class="icon is-small">
+                                                    <i class="fab fa-youtube"></i>
+                                                </span>
+                                                <span>ビデオ</span>
+                                            </a>
+                                            <a v-if="proposal.slide_url"
+                                                class="button is-small is-link is-outlined"
+                                                :href="proposal.slide_url"
+                                                target="_blank">
+                                                <span class="icon is-small">
+                                                    <i class="fab fa-slideshare"></i>
+                                                </span>
+                                                <span>スライド</span>
+                                            </a>
+                                            {{ proposal.talk_type }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </template>
+                    <!-- 読み込み中 -->
+                    <template v-else>
+                        <section class="section is-small">
+                            <div class="icon">
+                                <i class="fas fa-spinner fa-pulse fa-2x"></i>
+                            </div>
+                            <p class="is-large">Now loading ...</p>
+                        </section>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer darkmode-ignore">
+        <div class="content has-text-centered">
+            <p>
+                Powerd by <a href="http://blog.penginmura.tech/">ペンギン村 Tech</a>.
+            </p>
+            <p>
+                ペンギン村 Tech is believe in <a href="https://iosdc.jp/2019/">iOSDC 2019</a>.
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js"></script>
+    <script src="assets/index.js"></script>
+</body>
+</html>
