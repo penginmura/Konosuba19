@@ -19,4 +19,4 @@ workflows:
       - staging:
           filters:
             branches:
-              only: welcome-cicd
+              only: develop
