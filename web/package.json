@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "http-server": "^0.11.1"
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "firebase-tools": "^7.0.2"
   },
-  "devDependencies": {},
   "scripts": {
     "local": "http-server"
   },

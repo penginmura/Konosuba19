@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source" : "/api/v1/proposals",
+        "destination" : "/assets/proposals.json",
+        "type" : 301
+      }
+    ]
+  }
+}
