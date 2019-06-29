@@ -212,14 +212,20 @@
                             </span>
                         </div> -->
                         <!-- キーワード検索 -->
-                        <div class="control field is-horizontal">
+                        <div class="field has-addons">
                             <p class="control has-icons-left">
                                 <input v-model="searchWord" class="input" type="text" placeholder="検索ワード">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-search"></i>
                                 </span>
                             </p>
-                        </div>
+                            <div class="control">
+                                <a class="button"
+                                    v-on:click="searchWord = ''">
+                                    ✕
+                                </a>
+                            </div>
+                        </div>&nbsp;
                         <!-- トークタイプ検索 -->
                         <div class="control buttons has-addons">
                             <span
