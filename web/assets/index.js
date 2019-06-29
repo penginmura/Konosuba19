@@ -136,5 +136,3 @@ axios.get('/assets/proposals.json')
         proposalsMaster = proposals;
         proposalsInstance.proposals = proposals;
     })
-
-console.log("test");
