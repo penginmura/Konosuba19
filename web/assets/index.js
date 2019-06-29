@@ -109,6 +109,7 @@ const proposalsInstance = new Vue({
     },
     methods: {
         filterByUser: function(user) {
+            searchField.talkType = '';
             searchField.searchWord = user;
             window.scrollTo(0, 0);
         }
