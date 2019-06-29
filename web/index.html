@@ -266,7 +266,7 @@
                     <!-- 一覧 -->
                     <template v-if="proposals">
                         <span class="search-count">検索結果: {{ proposals.length }}件</span>
-                        <div v-for="proposal in proposals">
+                        <div v-for="proposal in proposals" v-bind:key="proposal.index">
                             <section class="section is-small">
                                 <div class="card">
                                     <div class="card-content">
@@ -279,19 +279,25 @@
                                             <div class="media-content">
                                                 <p class="title is-5">
                                                     <span v-show="proposal.is_adopted" class="tag cfp_adopted">採択</span>
+                                                    <!--
                                                     <span v-show="proposal.is_adopted_orecon" class="tag is-warning">俺コン</span>
                                                     <span v-show="proposal.is_adopted_rejectcon" class="tag is-primary">Reject Conf</span>
+                                                    -->
                                                     <a :href="proposal.detail_url" target="_blank">{{ proposal.title }}</a>&nbsp;
                                                 </p>
-                                                <p class="subtitle is-6">{{ proposal.user }} / <a :href="'https://twitter.com/' +  proposal.twitter_id" target="_blank">@{{ proposal.twitter_id }}</a></p>
+                                                <p class="subtitle is-6">{{ proposal.user }} /
+                                                    <a :href="proposal.twitter_url" target="_blank">@{{ proposal.twitter_id }}</a>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p v-html="proposal.description.replace(/\r\n/g,'<br/>')"></p>
+                                            <p v-html="proposal.description"></p>
                                         </div>
                                         <span
                                             class="tag"
                                             v-bind:class="[isDark ? 'is-dark' : 'is-light', 'is-light']">
+                                            <!--
+                                            たぶん `v-show` を使うようにしたほうが速い
                                             <a v-if="proposal.video_url"
                                                 class="button is-small is-link is-outlined"
                                                 :href="proposal.video_url"
@@ -310,6 +316,7 @@
                                                 </span>
                                                 <span>スライド</span>
                                             </a>
+                                            -->
                                             {{ proposal.talk_type }}
                                         </span>
                                     </div>
