@@ -6,6 +6,17 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {
+        "source" : "**/*.@(js|json)",
+        "headers" : [
+          {
+            "key" : "Cache-Control",
+            "value" : "no-cache"
+          }
+        ]
+      }
+    ],
     "redirects": [
       {
         "source" : "/api/v1/proposals",
