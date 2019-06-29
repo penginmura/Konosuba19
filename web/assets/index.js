@@ -106,6 +106,12 @@ const proposalsInstance = new Vue({
     data: {
         proposals: undefined,
         isDark: darkmode.isActivated()
+    },
+    methods: {
+        filterByUser: function(user) {
+            searchField.searchWord = user;
+            window.scrollTo(0, 0);
+        }
     }
 })
 
