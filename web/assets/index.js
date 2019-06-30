@@ -106,22 +106,33 @@ const proposalsInstance = new Vue({
     data: {
         proposals: undefined,
         isDark: darkmode.isActivated()
+    },
+    methods: {
+        filterByUser: function(user) {
+            searchField.talkType = '';
+            searchField.searchWord = user;
+            window.scrollTo(0, 0);
+        }
     }
 })
+
+const dict = {
+    'LT': 'LT（5分）',
+    'LT_R': 'iOSDCルーキーズ LT（5分）',
+    '15m': 'レギュラートーク（30分）',
+    '30m': 'レギュラートーク（60分）',
+    'iOS': '技術パッション共有トーク（60分）',
+};
 
 // プロポーザル一覧を読み込み
 axios.get('/assets/proposals.json')
     .then(function (response) {
-        let proposals = response.data.map(proposal => {
-            const dict = {
-                'LT': 'LT（5分）',
-                'LT_R': 'iOSDCルーキーズ LT（5分）',
-                '15m': 'レギュラートーク（30分）',
-                '30m': 'レギュラートーク（60分）',
-                'iOS': '技術パッション共有トーク（60分）',
-            }
-            proposal.talk_type = dict[proposal.talk_type];
-            return proposal
+        const proposals = response.data;
+        proposals.forEach((proposal, index) => {
+            proposal.index       = index;
+            proposal.talk_type   = dict[proposal.talk_type];
+            proposal.twitter_url = 'https://twitter.com/' + proposal.twitter_id;
+            proposal.description = proposal.description.replace(/\r\n/g,'<br/>');
         });
         proposalsMaster = proposals;
         proposalsInstance.proposals = proposals;
