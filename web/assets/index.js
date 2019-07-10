@@ -123,17 +123,3 @@ const dict = {
     '30m': 'レギュラートーク（60分）',
     'iOS': '技術パッション共有トーク（60分）',
 };
-
-// プロポーザル一覧を読み込み
-axios.get('/assets/proposals.json')
-    .then(function (response) {
-        const proposals = response.data;
-        proposals.forEach((proposal, index) => {
-            proposal.index       = index;
-            proposal.talk_type   = dict[proposal.talk_type];
-            proposal.twitter_url = 'https://twitter.com/' + proposal.twitter_id;
-            proposal.description = proposal.description.replace(/\r\n/g,'<br/>');
-        });
-        proposalsMaster = proposals;
-        proposalsInstance.proposals = proposals;
-    })

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="iOSDC 2019 のプロポーザル（CfP）の一覧の閲覧・検索ができるサービスです。" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>この素晴らしいCfPに祝福を！2 - iOSDC 2019 応援サイト / プロポーザル（CfP）一覧の閲覧・検索</title>
+    <title>このすばCfP 2 - iOSDC 2019 応援サイト / プロポーザル（CfP）一覧の閲覧・検索</title>
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <style type="text/css">
@@ -111,7 +111,7 @@
                     この素晴らしいCfPに祝福を！2
                 </h1>
                 <h2 class="subtitle">
-                    iOSDC 2019 応援サイト / ペンギン村 Tech presents.
+                    iOSDC 2019 応援サイト
                 </h2>
             </div>
         </div>
@@ -166,7 +166,11 @@
                                     {{ isDark ? 'ライトモード' : 'ダークモード' }}
                                 </a>
                             </li>
+                            <li>
+                                <img src="assets/pengin_white.png" />
+                            </li>
                         </ul>
+
                     </aside>
                 </div>
                 <!-- はてぶ -->
@@ -182,163 +186,16 @@
             <div class="column is-9">
                 <!-- フィルタリング -->
                 <div class="section is-small">
-                    <div id="searchCondition" class="field is-grouped is-grouped-multiline">
-                        <!-- 採択や関連イベントが追加されたらコメントを外す-->
-                        <!-- 採択 -->
-                        <!-- <div class="control buttons has-addons">
-                            <span
-                                v-on:click="eventType=undefined; isAdopt=true; isNotAdopt=true; filter(this)"
-                                v-bind:class="{ 'is-selected is-link': !eventType && isAdopt && isNotAdopt }" class="button">
-                                すべて
-                            </span>
-                            <span
-                                v-on:click="eventType=undefined; isAdopt=true; isNotAdopt=false; filter(this)"
-                                v-bind:class="{ 'is-selected is-danger': !eventType && isAdopt && !isNotAdopt }" class="button">
-                                採択
-                            </span>
-                            <span
-                                v-on:click="eventType=undefined; isAdopt=false; isNotAdopt=true; filter(this)"
-                                v-bind:class="{ 'is-selected is-info': !eventType && !isAdopt && isNotAdopt }" class="button">
-                                非採択
-                            </span>
-                        </div> -->
-                        <!-- 関連イベント -->
-                        <!-- <div class="control buttons has-addons">
-                            <span
-                                v-on:click="eventType='orecon'; filter(this)"
-                                v-bind:class="{ 'is-selected is-warning': eventType === 'orecon' }" class="button">
-                                俺コン
-                            </span>
-                            <span
-                                v-on:click="eventType='rejectcon'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': eventType === 'rejectcon' }" class="button">
-                                Reject Conf
-                            </span>
-                        </div> -->
-                        <!-- キーワード検索 -->
-                        <div class="field has-addons">
-                            <p class="control has-icons-left">
-                                <input v-model="searchWord" class="input" type="text" placeholder="検索ワード">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </p>
-                            <div class="control">
-                                <a class="button"
-                                    v-on:click="searchWord = ''">
-                                    ✕
-                                </a>
-                            </div>
-                        </div>&nbsp;
-                        <!-- トークタイプ検索 -->
-                        <div class="control buttons has-addons">
-                            <span
-                                v-on:click="talkType=''; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === '' }" class="button">
-                                すべて
-                            </span>
-                            <span
-                                v-on:click="talkType='LT'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === 'LT' }" class="button">
-                                LT
-                            </span>
-                            <span
-                                v-on:click="talkType='LT_R'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === 'LT_R' }" class="button">
-                                ルーキーズ
-                            </span>
-                            <span
-                                v-on:click="talkType='15m'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === '15m' }" class="button">
-                                30分
-                            </span>
-                            <span
-                                v-on:click="talkType='30m'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === '30m' }" class="button">
-                                60分
-                            </span>
-                            <span
-                                v-on:click="talkType='iOS'; filter(this)"
-                                v-bind:class="{ 'is-selected is-primary': talkType === 'iOS' }" class="button">
-                                パッション
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- プロポーザル一覧 -->
-                <div id="proposals">
-                    <!-- 一覧 -->
-                    <template v-if="proposals">
-                        <span class="search-count">検索結果: {{ proposals.length }}件</span>
-                        <div v-for="proposal in proposals" v-bind:key="proposal.index">
-                            <section class="section is-small">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <figure class="image is-48x48">
-                                                    <img :src="proposal.icon_url" alt="">
-                                                </figure>
-                                            </div>
-                                            <div class="media-content">
-                                                <p class="title is-5">
-                                                    <span v-show="proposal.is_adopted" class="tag cfp_adopted">採択</span>
-                                                    <!--
-                                                    <span v-show="proposal.is_adopted_orecon" class="tag is-warning">俺コン</span>
-                                                    <span v-show="proposal.is_adopted_rejectcon" class="tag is-primary">Reject Conf</span>
-                                                    -->
-                                                    <a :href="proposal.detail_url" target="_blank">{{ proposal.title }}</a>&nbsp;
-                                                </p>
-                                                <p class="subtitle is-6">
-                                                    <a v-on:click="filterByUser(proposal.user)">{{ proposal.user }}</a>&nbsp;&nbsp;&nbsp;
-                                                    <i class="fab fa-twitter"></i>
-                                                    <a :href="proposal.twitter_url" target="_blank">@{{ proposal.twitter_id }}</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <p v-html="proposal.description"></p>
-                                        </div>
-                                        <span
-                                            class="tag"
-                                            v-bind:class="[isDark ? 'is-dark' : 'is-light', 'is-light']">
-                                            <!--
-                                            たぶん `v-show` を使うようにしたほうが速い
-                                            <a v-if="proposal.video_url"
-                                                class="button is-small is-link is-outlined"
-                                                :href="proposal.video_url"
-                                                target="_blank">
-                                                <span class="icon is-small">
-                                                    <i class="fab fa-youtube"></i>
-                                                </span>
-                                                <span>ビデオ</span>
-                                            </a>
-                                            <a v-if="proposal.slide_url"
-                                                class="button is-small is-link is-outlined"
-                                                :href="proposal.slide_url"
-                                                target="_blank">
-                                                <span class="icon is-small">
-                                                    <i class="fab fa-slideshare"></i>
-                                                </span>
-                                                <span>スライド</span>
-                                            </a>
-                                            -->
-                                            {{ proposal.talk_type }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </template>
-                    <!-- 読み込み中 -->
-                    <template v-else>
-                        <section class="section is-small">
-                            <div class="icon">
-                                <i class="fas fa-spinner fa-pulse fa-2x"></i>
-                            </div>
-                            <p class="is-large">Now loading ...</p>
-                        </section>
-                    </template>
+                    <p>この度、iOSDC実行委員会に確認を取り検討した結果、<br>
+                        本サイトを通してのプロポーザルの検索・閲覧機能を停止することに致しました。
+                        <br><br>
+                        去年よりご愛好頂いていた皆様に改めて感謝申し上げます。
+                        <br><br>
+                        またiOSDCをより楽しむために我々にできることがあれば、<br>
+                        実行委員会の方々のご理解・承諾の元、貢献していきたいと思っております。
+                        <br><br>    
+                        ペンギン村
+                    </p>
                 </div>
             </div>
         </div>
